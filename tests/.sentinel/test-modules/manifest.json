@@ -1,0 +1,64 @@
+{
+	"records": [
+		{
+			"key": "test\\suite\\suite\\Member",
+			"source": "../../../src/members/Main.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/src/members/Main.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Class",
+			"source": "../../../src/core/Class.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/src/core/Class.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Test.Method",
+			"source": "../../members/test_method.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/tests/members/test_method.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Attribute",
+			"source": "../../../src/members/Attribute.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/src/members/Attribute.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Test.Attribute",
+			"source": "../../members/test_attribute.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/tests/members/test_attribute.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Test.Member",
+			"source": "../../members/test_member.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/tests/members/test_member.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Method",
+			"source": "../../../src/members/Method.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/src/members/Method.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Test.Class",
+			"source": "../../core/test_class.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/tests/core/test_class.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Core",
+			"source": "../../../src/core/Main.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/src/core/Main.sentinel"
+		},
+		{
+			"key": "test\\suite\\suite\\Assert",
+			"source": "../../utility/assert.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/edwardsl/Documents/HCLass/tests/utility/assert.sentinel"
+		}
+	]
+}

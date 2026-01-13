@@ -1,0 +1,29 @@
+import "Member" as Member_Exports
+import "Assert" as Assert
+
+Member = Member_Exports.Exports
+
+run = func() {
+    results = []
+
+    # Setup
+    attr = Member.Attribute("int", 10)
+
+    # Test 1: Initial Value
+    results += [Assert.Equal("Attribute: Get Initial Value", attr.Get(), 10)]
+
+    # Test 2: Valid Set
+    attr.Set(50)
+    results += [Assert.Equal("Attribute: Set Valid Value", attr.Get(), 50)]
+
+    # Test 3: Invalid Set (Type Mismatch)
+    # We expect this to return undefined or fail silently depending on your implementation
+    # Assuming your Set returns 'undefined' or prints error on failure
+    status = attr.Set("string") 
+    
+    # Verify value did NOT change
+    results += [Assert.Equal("Attribute: Prevent Invalid Type", attr.Get(), 50)]
+
+
+    return all results as r { r }
+}

@@ -1,0 +1,7 @@
+import "Class" as Class
+
+Exports = {
+    "Class": Class.New,
+}
+
+return Exports

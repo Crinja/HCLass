@@ -1,0 +1,10 @@
+import "Attribute" as Attribute
+import "Method" as Method
+
+Exports = {
+    "Action": Method.BinderNoArgs,
+    "Attribute": Attribute.TypedAttribute,
+    "Method": Method.Binder,
+}
+
+return Exports

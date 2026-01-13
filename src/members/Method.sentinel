@@ -1,0 +1,35 @@
+# MethodBinder transforms a stateless function into a stateful object method.
+# It uses closures to 'remember' the object context.
+Binder = func(raw_logic) {
+
+    # Accepts the mechanism to retrieve the current object state ('this').
+    return func(context_resolver) {
+
+        return func(runtime_args) {
+            
+            # Resolve the current state of the object using the callback
+            context = context_resolver()
+            
+            # Execute the original logic, injecting the context as the first argument
+            return raw_logic(context, runtime_args)
+        }
+    }
+}
+
+# Transforms a stateless function into a parameter-less object method.
+# Useful for simple actions or computed properties.
+BinderNoArgs = func(raw_logic) {
+
+    # Capture the context resolver to access object state later.
+    return func(context_resolver) {
+
+        return func() {
+            
+            # Resolve the current state ('this')
+            context = context_resolver()
+            
+            # Execute logic with context only (no external payload)
+            return raw_logic(context)
+        }
+    }
+}
