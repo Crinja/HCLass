@@ -1,6 +1,4 @@
-import "Member" as lMember
-
-Member = lMember.Exports
+import "HCLass_Member"
 
 # --- Configuration & Constants ---
 # Centralized constants prevent typos and allow for easy keyword changes later.

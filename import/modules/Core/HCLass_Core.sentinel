@@ -1,0 +1,3 @@
+import "HCLass_Core_Class"
+
+Class = HCLass_Core_Class.New

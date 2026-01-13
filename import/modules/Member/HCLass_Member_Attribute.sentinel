@@ -24,7 +24,6 @@ TypedAttribute = func(expected_type, initial_value) {
             
             if actual_type is not bound_type {
                 # TODO Error
-                print("Type Mismatch: Expected " + bound_type + ", received " + actual_type)
                 return undefined
             }
 
