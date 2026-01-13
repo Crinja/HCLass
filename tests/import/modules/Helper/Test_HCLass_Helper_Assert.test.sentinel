@@ -1,6 +1,5 @@
 Equal = func(test_name, actual, expected) {
     if actual is expected {
-        print("[PASS] " + test_name)
         return true
     } else {
         print("[FAIL] " + test_name)
@@ -12,7 +11,6 @@ Equal = func(test_name, actual, expected) {
 
 NotKey = func(test_name, in_map, key) {
     if key not in in_map {
-        print("[PASS] " + test_name)
         return true
     } else {
         print("[FAIL] " + test_name + " (Key '" + key + "' was found but should be missing)")

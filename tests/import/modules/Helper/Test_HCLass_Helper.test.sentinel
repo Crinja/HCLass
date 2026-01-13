@@ -1,0 +1,10 @@
+import "Test_HCLass_Helper_Assert"
+import "Test_HCLass_Helper_Builder"
+
+Assert = {
+    "Equal": Test_HCLass_Helper_Assert.Equal,
+    "NotKey": Test_HCLass_Helper_Assert.NotKey,
+    "True": Test_HCLass_Helper_Assert.True,
+}
+
+Test = Test_HCLass_Helper_Builder.Test
