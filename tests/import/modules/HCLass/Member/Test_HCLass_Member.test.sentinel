@@ -1,5 +1,0 @@
-import "Test_HCLass_Member_Attribute"
-
-Run = Test_HCLass_Helper.Test(
-    [Test_HCLass_Member_Attribute.Run],
-)

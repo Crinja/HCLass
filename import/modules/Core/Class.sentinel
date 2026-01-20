@@ -1,0 +1,33 @@
+import "Core/Constants" as Constants
+
+_ClassFactory = func(blueprint) {
+    _namespace = {}
+
+    # Initilize scopes
+    for Constants.__SCOPES__ as _, scope {
+        namespace[scope] = {}
+    }
+
+    # TODO: Test and init metadata
+
+    # TODO: Inheritance
+
+    # TODO: Member Init
+
+    # TODO: Interface validation
+
+    # TODO: Context Capture
+
+    return namespace
+}
+
+# TODO: Add constructor args
+New = func() {
+    _class = _ClassFactory()
+
+    # Append public scope to interface, then join metadata
+    publicInterface = _class[Constants.__SCOPES__.__PUBLIC__]
+    publicInterface[Constants.__META__.__KEY__] = _class[Constants.__META__.__KEY__]
+
+    return publicInterface
+}

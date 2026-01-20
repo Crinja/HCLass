@@ -1,6 +1,0 @@
-import "HCLass_Member_Attribute"
-import "HCLass_Member_Method"
-
-Action = HCLass_Member_Method.BinderNoArgs
-Attribute = HCLass_Member_Attribute.TypedAttribute
-Method = HCLass_Member_Method.Binder

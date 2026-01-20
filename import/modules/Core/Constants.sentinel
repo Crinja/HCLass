@@ -1,0 +1,15 @@
+__SCOPES__ = [
+    "__PUBLIC__": "public", 
+    "__PROTECTED__": "protected", 
+    "__PRIVATE__": "private",
+    ]
+
+__META__ = {
+    "__KEY__": "__metadata__",
+    "__NAME__": "",
+}
+
+__TOKENS__ = {
+    "__INHERITS__": "inherits",
+    "__IMPLEMENTS__": "implements",
+}
