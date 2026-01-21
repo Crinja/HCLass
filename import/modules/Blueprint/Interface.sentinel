@@ -1,0 +1,41 @@
+import "Constants" as Constants
+
+Interface = func(interfaceName) {
+    _currentScope = Constants.__SCOPES__.__PRIVATE__
+
+    _blueprint = {
+       Constants.__META__.__KEY__: {
+        Constants.__META__.__NAME__: interfaceName,
+        Constants.__META__.__TYPE__: Constants.__TYPES__.__INTERFACE__,
+       }, 
+    }
+
+    _functions = {
+        "SetScope": func(scope) {
+            if scope not in values(Constants.__SCOPES__) {
+                error("Invalid Scope.")
+            }
+
+            _currentScope = scope
+
+            return _functions
+        },
+        "Extends": func(baseBp) {
+            if baseBp[Constants.__META__.__KEY__][Constants.__META__.__TYPE__] is not Constants.__TYPES__.__INTERFACE__ {
+                error("Cannot extend object.\n" +
+                    "Expected: " + string(Constants.__TYPES__.__INTERFACE__) + "\n" +
+                    "Got: " + string(baseBp[Constants.__META__.__KEY__][Constants.__META__.__TYPE__]))
+            }
+
+            _blueprint[Constants.__TOKENS__.__EXTENDS__] = baseBp
+
+            return _functions
+        },
+        "AddMethod": func()
+        "Assemble": func() {
+            return _blueprint
+        },
+    }
+
+    return _functions
+}
