@@ -1,0 +1,70 @@
+import "types"
+
+import "HCLass_Config_Constants" as Constants
+import "HCLass_Core_Primative" as Primative
+
+_Factory = func(bp) {
+    _meta = bp[Constants.Metadata.Key] else {}
+
+    _meta[Constants.Metadata.Type] = Constants.Member.Method.Key
+    _currentScope = _meta[Constants.Metadata.Scope.Key] else null
+    if _currentScope is null {
+        _meta[Constants.Metadata.Scope.Key] = Constants.Metadata.Scope.Levels.Private
+    }
+
+    bp[Constants.Metadata.Key] = _meta
+    _this = Primative.ScopedObject(bp)
+
+    // Assign args
+    _args = _JoinArgs(Constants.Member.Method.DefaultArgs, _meta[Constants.Metadata.Arguments] else [])
+    if types.type_of(_args) is "list" {
+        _this[Constants.Metadata.Key][Constants.Metadata.Arguments] = _args
+    } else {
+        error()
+    }
+
+    // Assign Body (Couldn't get validation for func to work)
+    _body = bp[Constants.Member.Body] else null
+    _this[Constants.Member.Body] = _body
+
+    // Call wrapper
+    _this[Constants.Member.Method.Call] = func(args) {
+        if types.type_of(args) is not "map" { error() } 
+        allArgsPresent = true
+        for _this[Constants.Metadata.Key][Constants.Metadata.Arguments] as arg {
+            print(arg.Key)
+            if arg.Key not in args { allArgsPresent = false; break }
+        }
+        if not allArgsPresent { error() }
+
+        return _this[Constants.Member.Body](args)
+    }
+
+    return _this
+}
+
+// Join user args with default args. Ensure no conflicts
+_JoinArgs = func(system_args, user_args) {
+    _seen = {}
+    _final_list = []
+
+    for system_args as arg {
+        _k = arg["Key"]
+        
+        _seen[_k] = true
+        append(_final_list, arg)
+    }
+
+    for user_args as arg {
+        _k = arg["Key"]
+
+        if _k in _seen {
+            error("Argument Name Conflict: '" + _k + "' is a reserved system argument.")
+        }
+        
+        _seen[_k] = true
+        append(_final_list, arg)
+    }
+
+    return _final_list
+}
