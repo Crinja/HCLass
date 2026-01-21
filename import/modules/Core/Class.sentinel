@@ -1,4 +1,4 @@
-import "Core/Constants" as Constants
+import "Constants" as Constants
 
 _ClassFactory = func(blueprint) {
     _namespace = {}
