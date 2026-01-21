@@ -1,0 +1,5 @@
+import "HCLass_Core_Member_Attribute"
+import "HCLass_Core_Member_Method"
+
+Attribute = HCLass_Core_Member_Attribute._Factory
+Method = HCLass_Core_Member_Method._Factory
