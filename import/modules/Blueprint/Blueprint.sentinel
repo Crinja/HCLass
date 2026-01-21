@@ -1,0 +1,6 @@
+import "HCLass_Blueprint_Class"
+import "HCLass_Blueprint_Interface"
+import "HCLass_Blueprint_Method"
+
+Class = HCLass_Blueprint_Class.New
+Interface = HCLass_Blueprint_Interface.New
