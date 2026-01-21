@@ -1,0 +1,19 @@
+import "HCLass_Core_Member_Attribute" as Attribute
+
+number = Attribute._Factory({
+    "__metadata__": {
+        "name": "num1", 
+        "dataType": "int",
+    },
+    "body": null,
+})
+
+print(number)
+print(number.Get())
+print(number.Set(5).Get())
+
+
+
+main = rule {
+    true
+}

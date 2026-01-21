@@ -429,3 +429,6 @@ FodyWeavers.xsd
 
 *.sentinel/
 *temp*
+*test*
+*.hcl
+*.ps1

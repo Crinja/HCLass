@@ -1,0 +1,5 @@
+import "HCLass_Core_Primative_Object"
+import "HCLass_Core_Primative_ScopedObject"
+
+Object = HCLass_Core_Primative_Object._Factory
+ScopedObject = HCLass_Core_Primative_ScopedObject._Factory

@@ -1,0 +1,21 @@
+Metadata = {
+    "Key": "__metadata__",
+    "Name": "name",
+    "Type": "type",
+    "Scope": {
+        "Key": "scope",
+        "Levels": {
+            "Public": "public",
+            "Protected": "protected",
+            "Private": "private",
+        },
+    },
+    "Static": "static",
+    "DataType": "dataType",
+}
+
+Member = {
+    "Body": "body",
+    "Get": "Get",
+    "Set": "Set",
+}

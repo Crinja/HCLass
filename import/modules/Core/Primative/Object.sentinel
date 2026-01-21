@@ -1,0 +1,26 @@
+import "HCLass_config_Constants" as Constants
+
+_Factory = func(bp) {
+    // Build metadata key
+    _this = { Constants.Metadata.Key: {}}
+
+    _meta = bp[Constants.Metadata.Key] else {}
+
+    // Assign name
+    _name = _meta[Constants.Metadata.Name]
+    if _name else null is not null {
+        _this[Constants.Metadata.Key][Constants.Metadata.Name] = _name
+    } else {
+        error()
+    }
+
+    // Assign type
+    _type = _meta[Constants.Metadata.Type]
+    if _type else null is not null {
+        _this[Constants.Metadata.Key][Constants.Metadata.Type] = _type
+    } else {
+        error()
+    }
+
+    return _this
+}

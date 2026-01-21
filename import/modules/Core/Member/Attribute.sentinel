@@ -1,0 +1,42 @@
+import "types"
+
+import "HCLass_config_Constants" as Constants
+import "HCLass_Core_Primative" as Primative
+
+_Factory = func(bp) {
+    _meta = bp[Constants.Metadata.Key] else {}
+
+    _meta[Constants.Metadata.Type] = "Attribute"
+    _currentScope = _meta[Constants.Metadata.Scope.Key] else null
+    if _currentScope is null {
+        _meta[Constants.Metadata.Scope.Key] = Constants.Metadata.Scope.Levels.Private
+    }
+
+    bp[Constants.Metadata.Key] = _meta
+    _this = Primative.ScopedObject(bp)
+
+    _dataType = bp[Constants.Metadata.Key][Constants.Metadata.DataType] else null
+    if types.type_of(_dataType) is "string" { 
+        _this[Constants.Metadata.Key][Constants.Metadata.DataType] = _dataType
+    } else {
+        error()
+    }
+
+    // Add get method
+    _this[Constants.Member.Get] = bp[Constants.Member.Get] else func() {
+        return _this[Constants.Member.Body]
+    }
+
+    // Add set method
+    _this[Constants.Member.Set] = bp[Constants.Member.Set] else func(v) {
+        # TODO: Reflection type check
+
+        _this[Constants.Member.Body] = v
+
+        return _this
+    }
+
+    _this[Constants.Member.Set](bp[Constants.Member.Body] else null)
+
+    return _this
+}

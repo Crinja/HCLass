@@ -1,0 +1,26 @@
+import "HCLass_config_Constants" as Constants
+import "HCLass_Core_Primative_Object" as Object
+
+_Factory = func(bp) {
+    _this = Object._Factory(bp)
+
+    _meta = bp[Constants.Metadata.Key] else {}
+
+    // Assign Scope
+    _scope = _meta[Constants.Metadata.Scope.Key]
+    if _scope else null in values(Constants.Metadata.Scope.Levels) {
+        _this[Constants.Metadata.Key][Constants.Metadata.Scope.Key] = _scope
+    } else {
+        error()
+    }
+
+    // Assign static (default = false)
+    _static = _meta[Constants.Metadata.Static] else false
+    if _static in [true, false] {
+        _this[Constants.Metadata.Key][Constants.Metadata.Static] = _static
+    } else {
+        error()
+    }
+
+    return _this
+}
