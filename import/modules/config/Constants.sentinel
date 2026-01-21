@@ -12,10 +12,21 @@ Metadata = {
     },
     "Static": "static",
     "DataType": "dataType",
+    "Arguments": "arguments",
 }
 
 Member = {
+    "Attribute": {
+        "Key": "Attribute",
+        "Get": "Get",
+        "Set": "Set",
+    },
+    "Method": {
+        "Key": "Method",
+        "Call": "Call",
+        "DefaultArgs": [
+            { "Key": "_this", "Type": "Class", },
+        ],
+    },
     "Body": "body",
-    "Get": "Get",
-    "Set": "Set",
 }
