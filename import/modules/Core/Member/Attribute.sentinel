@@ -1,12 +1,12 @@
 import "types"
 
-import "HCLass_config_Constants" as Constants
+import "HCLass_Config_Constants" as Constants
 import "HCLass_Core_Primative" as Primative
 
 _Factory = func(bp) {
     _meta = bp[Constants.Metadata.Key] else {}
 
-    _meta[Constants.Metadata.Type] = "Attribute"
+    _meta[Constants.Metadata.Type] = Constants.Member.Attribute.Key
     _currentScope = _meta[Constants.Metadata.Scope.Key] else null
     if _currentScope is null {
         _meta[Constants.Metadata.Scope.Key] = Constants.Metadata.Scope.Levels.Private
@@ -23,12 +23,12 @@ _Factory = func(bp) {
     }
 
     // Add get method
-    _this[Constants.Member.Get] = bp[Constants.Member.Get] else func() {
+    _this[Constants.Member.Attribute.Get] = bp[Constants.Member.Attribute.Get] else func() {
         return _this[Constants.Member.Body]
     }
 
     // Add set method
-    _this[Constants.Member.Set] = bp[Constants.Member.Set] else func(v) {
+    _this[Constants.Member.Attribute.Set] = bp[Constants.Member.Attribute.Set] else func(v) {
         # TODO: Reflection type check
 
         _this[Constants.Member.Body] = v
@@ -36,7 +36,7 @@ _Factory = func(bp) {
         return _this
     }
 
-    _this[Constants.Member.Set](bp[Constants.Member.Body] else null)
+    _this[Constants.Member.Attribute.Set](bp[Constants.Member.Body] else null)
 
     return _this
 }
