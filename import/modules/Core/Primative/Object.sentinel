@@ -1,4 +1,4 @@
-import "HCLass_config_Constants" as Constants
+import "HCLass_Config_Constants" as Constants
 
 _Factory = func(bp) {
     // Build metadata key

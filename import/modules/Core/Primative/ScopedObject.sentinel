@@ -1,4 +1,4 @@
-import "HCLass_config_Constants" as Constants
+import "HCLass_Config_Constants" as Constants
 import "HCLass_Core_Primative_Object" as Object
 
 _Factory = func(bp) {
