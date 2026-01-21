@@ -1,6 +1,6 @@
-import "Constants" as Constants
+import "HCLass_Core_Constants" as Constants
 
-Class = func(className) {
+New = func(className) {
     _blueprint = {
        Constants.__META__.__KEY__: {
         Constants.__META__.__NAME__: className,
