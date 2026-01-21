@@ -1,6 +1,6 @@
-import "HCLass_Core_Member_Attribute" as Attribute
+import "HCLass_Core_Member" as Member
 
-number = Attribute._Factory({
+number = Member.Attribute({
     "__metadata__": {
         "name": "num1", 
         "dataType": "int",
@@ -11,6 +11,16 @@ number = Attribute._Factory({
 print(number)
 print(number.Get())
 print(number.Set(5).Get())
+
+methodTest = Member.Method({
+    "__metadata__": {
+        "name": "MethodTest", 
+    },
+    "body": func(args) { print("Hi from test"); return null },
+})
+
+print(methodTest)
+methodTest.Call({"_this": 10})
 
 
 
