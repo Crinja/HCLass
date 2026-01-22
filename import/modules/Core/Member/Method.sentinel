@@ -1,7 +1,7 @@
 import "types"
 
 import "HCLass_Config_Constants" as Constants
-import "HCLass_Core_Primative" as Primative
+import "HCLass_Core_Primitive" as Primative
 
 _Factory = func(bp) {
     _meta = bp[Constants.Metadata.Key] else {}

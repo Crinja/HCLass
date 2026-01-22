@@ -1,5 +1,5 @@
 import "HCLass_Config_Constants" as Constants
-import "HCLass_Core_Primative_Object" as Object
+import "HCLass_Core_Primitive_Object" as Object
 
 _Factory = func(bp) {
     _this = Object._Factory(bp)
